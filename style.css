@@ -1,0 +1,407 @@
+/* Importação da fonte Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    /* Cores baseadas no mural */
+    --cor-roxo-principal: #6A05AD; /* Roxo mais escuro do Interclasse */
+    --cor-roxo-claro: #9F2ADD; /* Roxo mais vibrante */
+    --cor-verde-agua: #00BFFF; /* Azul/Verde água vibrante */
+    --cor-branco: #FFFFFF;
+    --cor-laranja-destaque: #FF6700; /* Laranja do rodapé ou elementos */
+    --cor-cinza-escuro: #333333; /* Texto e elementos mais sóbrios */
+    --cor-cinza-claro: #F0F0F0; /* Fundos suaves */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6;
+    color: var(--cor-cinza-escuro);
+    background-color: var(--cor-cinza-claro);
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Títulos e Parágrafos */
+h1, h2, h3, h4 {
+    color: var(--cor-roxo-principal);
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1); /* Efeito 8-bit */
+}
+
+p {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 0.9em; /* Ajuste para melhor leitura da fonte */
+}
+
+a {
+    color: var(--cor-roxo-claro);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-laranja-destaque);
+}
+
+/* Header */
+header {
+    background-color: var(--cor-roxo-principal);
+    color: var(--cor-branco);
+    padding: 20px 0;
+    border-bottom: 5px solid var(--cor-verde-agua);
+    text-align: center;
+}
+
+header h1 {
+    color: var(--cor-branco);
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+header p {
+    color: var(--cor-branco);
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Para telas menores */
+}
+
+header nav ul li a {
+    color: var(--cor-branco);
+    font-size: 1em;
+    padding: 10px 15px;
+    border: 2px solid var(--cor-branco);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: var(--cor-verde-agua);
+    border-color: var(--cor-verde-agua);
+    color: var(--cor-cinza-escuro);
+}
+
+/* Seções Gerais */
+.section-padded {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.bg-roxo {
+    background-color: var(--cor-roxo-principal);
+    color: var(--cor-branco);
+}
+
+.bg-roxo h3, .bg-roxo p {
+    color: var(--cor-branco);
+}
+
+.bg-verde-agua {
+    background-color: var(--cor-verde-agua);
+    color: var(--cor-cinza-escuro);
+}
+
+.bg-verde-agua h3, .bg-verde-agua p, .bg-verde-agua a {
+    color: var(--cor-cinza-escuro);
+}
+
+/* Hero Section / Banner */
+.hero {
+    background-color: var(--cor-verde-agua);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--cor-roxo-principal);
+}
+
+.hero h2 {
+    font-size: 2.8em;
+    color: var(--cor-cinza-escuro);
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: var(--cor-cinza-escuro);
+    margin-bottom: 30px;
+}
+
+.lampada-icone {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+    animation: bounce 2s infinite ease-in-out; /* Animação simples */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Cards de Informação */
+.cards-informacao {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.cards-informacao .card {
+    background-color: var(--cor-branco);
+    border: 3px solid var(--cor-roxo-claro);
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.cards-informacao .card:hover {
+    transform: translateY(-10px);
+}
+
+.cards-informacao .card h4 {
+    font-size: 1.5em;
+    color: var(--cor-laranja-destaque);
+    margin-bottom: 15px;
+}
+
+.cards-informacao .card p {
+    font-size: 0.85em;
+    text-align: left; /* Para melhor leitura em blocos de texto */
+}
+
+
+/* Mitologias Grid */
+.mitologias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    justify-items: center;
+}
+
+.mito-item {
+    background-color: var(--cor-roxo-claro);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 2px solid var(--cor-verde-agua);
+}
+
+.mito-item:hover {
+    transform: translateY(-8px);
+    background-color: var(--cor-laranja-destaque);
+    border-color: var(--cor-branco);
+}
+
+.mito-item img {
+    width: 80px; /* Tamanho dos ícones */
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.2)); /* Efeito de sombra nos ícones */
+}
+
+.mito-item p {
+    color: var(--cor-branco);
+    font-size: 0.9em;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+/* Programação */
+.programacao-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.periodo-card {
+    background-color: var(--cor-branco);
+    border: 3px solid var(--cor-laranja-destaque);
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: left; /* Para melhor leitura da lista */
+}
+
+.periodo-card:hover {
+    transform: translateY(-10px);
+}
+
+.periodo-card h4 {
+    font-size: 1.6em;
+    color: var(--cor-roxo-principal);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.periodo-card p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.periodo-card ul {
+    list-style: none; /* Remove bullet points padrão */
+    padding-left: 20px; /* Espaçamento para o bullet customizado */
+    margin-top: 10px;
+}
+
+.periodo-card ul li {
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 0.85em;
+}
+
+.periodo-card ul li::before {
+    content: '►'; /* Bullet customizado */
+    color: var(--cor-verde-agua);
+    position: absolute;
+    left: -20px;
+    top: 0;
+}
+
+.nota {
+    margin-top: 30px;
+    font-size: 0.75em;
+    color: var(--cor-cinza-escuro);
+    text-align: center;
+}
+
+/* Contato */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    background-color: var(--cor-roxo-principal);
+    color: var(--cor-branco);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid var(--cor-roxo-principal);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 0.8em;
+}
+
+.social-links a:hover {
+    background-color: var(--cor-laranja-destaque);
+    border-color: var(--cor-laranja-destaque);
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-roxo-principal);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.8em;
+    border-top: 5px solid var(--cor-laranja-destaque);
+}
+
+footer p {
+    color: var(--cor-branco);
+}
+
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .cards-informacao, .programacao-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards-informacao .card, .periodo-card {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    .mitologias-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.8em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    .mito-item {
+        padding: 10px;
+    }
+
+    .mito-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
